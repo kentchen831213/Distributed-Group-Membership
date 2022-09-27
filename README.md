@@ -3,10 +3,10 @@
 ## Operating process
 ### Preparing the code and data
 
-First, you should save the 'introducer_refine.cpp' that in the 'mp2 folder' onto one of your virtual machines to make it as a introducer. In this time, we use vm1 as introducer. And you should save 'udp_server_client_multi_thread.cpp' that in the 'mp2 folder' onto other nine virtual machines.
+First, you should save the 'introducer.cpp' onto one of your virtual machines to make it as a introducer. In this time, we use vm1 as introducer. And you should save 'udp_server_client.cpp' that in the 'mp2 folder' onto other nine virtual machines.
 
 You can git clone or scp all the code onto your servers.
-Before git clone or scp the code,you should take care of the variable `ip_list` in the 'introducer_refine.cpp' and 'udp_server_client_refine.cpp'
+Before git clone or scp the code,you should take care of the variable `ip_list` in the 'introducer.cpp' and 'udp_server_client.cpp'
 ```
 vector<string> ip_list={"172.22.156.2","172.22.158.2","172.22.94.2","172.22.156.3","172.22.158.3",
                         "172.22.94.3","172.22.156.4","172.22.158.4","172.22.94.4","172.22.156.5"};
@@ -15,14 +15,14 @@ You can modify it into your own ip of 10 virtual machines.
 
 
 Then, You can refer to`./scripts/scp_vm_udp_multi_thread.sh`.
-Input the following commands to scp 'udp_server_client_refine.cpp' and 'introducer_refine.cpp' onto all 10 virtual machines at one time:
+Input the following commands to scp 'udp_server_client.cpp' and 'introducer.cpp' onto all 10 virtual machines at one time:
 ```
 ./scripts/scp_vm_udp_multi_thread.sh
 ```
 
 
 ### Compile the introducer and  udp_server_client program
-Once connected to all virtual machines, user can chose one machine as introducer, and run the 'g++ -pthread -g introducer_refine.cpp -o ./introducer_try' to compile the introducer program. And you can run 'g++ -pthread -g udp_server_client_refine.cpp -o  ./udp_server_client' to compile the udp server client program.
+Once connected to all virtual machines, user can chose one machine as introducer, and run the 'g++ -pthread -g introducer.cpp -o ./introducer_try' to compile the introducer program. And you can run 'g++ -pthread -g udp_server_client.cpp -o  ./udp_server_client' to compile the udp server client program.
 
 
 ### Run the client program and send grep command
