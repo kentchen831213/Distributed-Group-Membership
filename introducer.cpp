@@ -1,5 +1,5 @@
 //
-// Created by px6 and ycc5 on 2022/9/18.
+// Created by ycc5 on 2022/9/18.
 //
 #include <unistd.h>
 #include <stdlib.h>
