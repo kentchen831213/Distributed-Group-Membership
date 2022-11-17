@@ -233,7 +233,7 @@ string create_udp_client_socket(const char *hostname = "172.22.94.198",int VM_nu
         return "1";
     }
 
-    // send updaye maintain list message to server
+    // send update maintain list message to server
     std::cout<<sizeof(message)<<endl;
     setsockopt(sockfd,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));//set time out
     auto send_ping_time_point = high_resolution_clock::now();
