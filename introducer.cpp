@@ -206,43 +206,6 @@ vector<string> update_maintain_list_state(string& temp, vector<vector<string>>& 
 
     return words_with_prefix;
 }
-/*
-void create_udp_client_socket(const char *hostname = "172.22.94.198",int VM_number=1,string COMMAND_CONTENT="1 172.22.94.198 unactive", bool ping = false,int sendto_VM_number=2){
-
-    int sockfd, addrlen;
-    char buffer[DATA_BUFFER_SIZE];
-    const char* message = COMMAND_CONTENT.c_str();
-    struct sockaddr_in servaddr, addr;
-
-    int n, len;
-    // Creating socket file descriptor
-    if ((sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
-        printf("socket creation failed");
-        exit(0);
-    }
-
-    memset(&servaddr, 0, sizeof(addr));
-  
-    // Filling server information
-    servaddr.sin_family = AF_INET;
-    servaddr.sin_port = htons(PORT);
-    servaddr.sin_addr.s_addr = inet_addr(hostname);
-
-    // connect to server
-    if(connect(sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr)) < 0){
-        printf("\n Error : Connect Failed \n");
-        return ;
-    }
-
-    // send updaye maintain list message to server
-    if(sendto(sockfd, message, strlen(message),
-        0, (const struct sockaddr *) &servaddr,  
-            sizeof(servaddr))<0){
-                std::cout<<"unable send message"<<endl;
-                return ;
-            };
-}*/
-
 
 string create_udp_client_socket(const char *hostname = "172.22.94.198",int VM_number=1,
                                 string COMMAND_CONTENT="1 172.22.94.198 unactive", bool ping = false,int sendto_VM_number=2,vector<vector<string>>* maintain_list={}){
